@@ -5,7 +5,7 @@
 // The prototipe says everything
 tree* create_new_node(int v)
 {
-	tree* new_node = (tree*)calloc(1,sizeof(tree));
+	tree* new_node = (tree*)malloc(1,sizeof(tree));
 	new_node->left = NULL;
 	new_node->right = NULL;
 	new_node->info = v;
@@ -21,7 +21,7 @@ tree* insert_BST(tree* t, int v)
 		t = create_new_node(v);
 		return t;
 	}
-
+	
 	if (t->info < v)
 		t->left = insert_BST(t->left, v);
 	else
@@ -71,7 +71,6 @@ int get_num_leaves(tree* t)
 		return 1;
 	else
 		return get_num_leaves(t->left) + get_num_leaves(t->right);
-
 }
 
 // Returns the maximum height
