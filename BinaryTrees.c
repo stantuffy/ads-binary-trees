@@ -5,7 +5,7 @@
 // The prototipe says everything
 tree* create_new_node(int v)
 {
-	tree* new_node = (tree*)malloc(1,sizeof(tree));
+	tree* new_node = (tree*)malloc(sizeof(tree));
 	new_node->left = NULL;
 	new_node->right = NULL;
 	new_node->info = v;
