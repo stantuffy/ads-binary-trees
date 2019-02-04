@@ -159,6 +159,15 @@ _Bool find_preorder(tree* t,int v)
 
 }
 
+_Bool are_equal(tree* t1, tree* t2)
+{
+	if (t1 == NULL) && (t2 == NULL) return 1;
+	if (t1 == NULL) || (t2 == NULL) return 0;
+	if (t1->info != t2->info) return 0;
+	
+	return are_equal(t1->left, t2->left) && are_equal(t1->right, t2->right);
+}
+
 // Checks if a tree is complete
 _Bool is_complete(tree* t)
 {
