@@ -32,6 +32,8 @@ _Bool find_preorder(tree* t, int v);
 
 _Bool is_complete(tree* t);
 
+_Bool are_equal(tree* t1, tree* t2);
+
 int power(int b, int exp);
 
 #endif
