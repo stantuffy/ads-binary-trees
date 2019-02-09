@@ -18,6 +18,8 @@ void print_tree(tree* t,int space);
 
 int get_num_nodes(tree* t);
 
+int get_nodes_at_level(tree* t);
+
 int get_num_leaves(tree* t);
 
 int get_height(tree* t);
