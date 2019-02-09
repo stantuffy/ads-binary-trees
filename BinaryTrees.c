@@ -62,6 +62,16 @@ int get_num_nodes(tree* t)
 	return 1+l+r;
 }
 
+// Returns the number of nodes at height h
+int get_nodes_at_level(tree* t, int h)
+{
+	if (T == NULL)
+		return 0;
+	if (h == 0)
+		return 1;
+	return get_nodes_at_level(t->left, h-1) + get_nodes_at_level(t->right, h+1);
+}
+
 // Returns the total number of leaves
 int get_num_leaves(tree* t)
 {
