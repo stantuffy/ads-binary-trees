@@ -76,7 +76,7 @@ int get_nodes_at_level(tree* t, int h)
 int get_num_leaves(tree* t)
 {
 	if (t == NULL)
-		return 1;
+		return 0;
 	if (t->left == NULL && t->right == NULL)
 		return 1;
 	else
