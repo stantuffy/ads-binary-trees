@@ -1,10 +1,6 @@
 #include "tree.h"
 #include "stdlib.h"
 
-// cosa deve succedere al singolo nodo?
-//tutte le funzioni ricorsive degli alberi si basano su questo
-// per esempio per calcolare il n di foglie il nodo deve avere
-// i campi null
 //cercare sempre il caso base e capire cosa deve succedere al singolo nodo
 
 Tree createNewTree(int value) {
