@@ -13,7 +13,7 @@ Node* createNode(int value);
 
 Tree createNewTree(int value);
 
-void clearTree(Node* tree);
+void clearTree(Node** root);
 
 void add(Node** root, int value);
 
