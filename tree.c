@@ -19,16 +19,18 @@ Tree createNewTree(int value) {
     */
 }
 
-void clearTree(Node* root) {
-    if (root == NULL)
+//uso il doppio puntatore per ottenere l'indirizzo effettivo del puntatore alla radice
+//dell'albero
+void clearTree(Node** root) {
+    if (*root == NULL)
         return;
 
-    clearTree(root->left);
-    clearTree(root->right);
+    clearTree(&(*root)->left);
+    clearTree(&(*root)->right);
 
-    printf("Cancello il nodo con valore %d", root->value);
-    free(root);
-    root = NULL;
+    printf("Cancello il nodo con valore %d", (*root)->value);
+    free(*root);
+    *root = NULL;
 }
 
 
@@ -47,6 +49,9 @@ Node* createNode(int value) {
     */
 }
 
+//anche qui uso il doppio puntatore per ottenere l'indirizzo effettivo
+//del puntatore alla radice dell'albero, altrimenti aggiungerei un nodo
+//a una copia della radice
 void add(Node** root, int value) {
     /* il nodo corrente ha il figlio sinistro/destro
      * nullo, quindi lo aggiungo
