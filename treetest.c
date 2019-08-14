@@ -13,7 +13,7 @@ void setupTree(Tree* tree) {
 _Bool testClearTree() {
     Tree tree = createNewTree(4);
     setupTree(&tree);
-    clearTree(tree.root);
+    clearTree(&tree.root);
 
     return tree.root == NULL;
 }
@@ -63,8 +63,10 @@ _Bool testGetPath() {
     Tree tree = createNewTree(4);
     setupTree(&tree);
 
-    int* output = getPath(tree.root, 5);
-    return output[0] == 5;
+    int* array = getPath(tree.root, 5);
+    _Bool output = array[0] == 5;
+    free(array);
+    return output;
 }
 
 int main() {
